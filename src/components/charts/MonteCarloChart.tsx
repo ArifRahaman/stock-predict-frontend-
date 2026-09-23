@@ -22,15 +22,17 @@ export function MonteCarloChart({ mc }: { mc: MonteCarlo }) {
   });
 
   return (
-    <div className="panel p-5">
-      <div className="flex items-center justify-between">
-        <h3 className="font-semibold">Monte Carlo — {mc.days} trading days</h3>
-        <span className="text-xs text-[var(--muted)]">
-          {mc.n_paths.toLocaleString()} simulated paths
+    <div className="panel p-3 sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 className="font-semibold text-sm sm:text-base">
+          Monte Carlo — {mc.days} trading days
+        </h3>
+        <span className="text-[11px] sm:text-xs text-[var(--muted)]">
+          {mc.n_paths.toLocaleString()} paths
         </span>
       </div>
 
-      <div className="mt-4 h-[260px] w-full">
+      <div className="mt-4 h-[220px] sm:h-[260px] w-full">
         <ResponsiveContainer>
           <LineChart data={data} margin={{ top: 5, right: 8, bottom: 0, left: 0 }}>
             <XAxis dataKey="day" stroke="#8b97ab" fontSize={11} tickLine={false} />

@@ -8,10 +8,10 @@ export function BacktestTable({ bt }: { bt: BacktestResponse }) {
   const anyUnreliable = rows.some((r) => !r.error && r.reliable === false);
 
   return (
-    <div className="panel p-5">
-      <div className="flex items-center justify-between">
+    <div className="panel p-3 sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="font-semibold">Walk-Forward Backtest</h3>
-        <span className="text-xs text-[var(--muted)]">
+        <span className="text-[11px] sm:text-xs text-[var(--muted)]">
           out-of-sample · {bt.horizon}-day horizon
         </span>
       </div>

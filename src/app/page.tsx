@@ -13,11 +13,11 @@ const MODELS = [
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-14">
-      <h1 className="text-3xl font-semibold tracking-tight">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-14">
+      <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
         Quantitative stock prediction
       </h1>
-      <p className="mt-2 max-w-2xl text-[var(--muted)]">
+      <p className="mt-2 max-w-2xl text-sm sm:text-base text-[var(--muted)]">
         Enter any ticker to pull live data and run a full quant stack — ARIMA,
         GARCH, Kalman, HMM and XGBoost combined into one ensemble, with Monte
         Carlo simulation and honest walk-forward backtests.

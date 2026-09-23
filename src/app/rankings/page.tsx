@@ -79,7 +79,7 @@ function Validation({ market, horizon }: { market: string; horizon: number }) {
   const real = d.significant_after_costs;
 
   return (
-    <div className="panel p-5">
+    <div className="panel p-3 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="font-semibold">Does this survive reality?</h3>
         <span
@@ -173,8 +173,8 @@ export default function RankingsPage() {
   const bottom = rows.slice(-10).reverse();
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-8">
-      <h1 className="text-2xl font-semibold tracking-tight">Cross-Sectional Rankings</h1>
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+      <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">Cross-Sectional Rankings</h1>
       <p className="mt-2 max-w-3xl text-sm text-[var(--muted)]">
         Trained across the whole universe over 20 years to rank stocks by
         risk-adjusted return <em>relative to the market</em>. This is the only part
@@ -257,10 +257,10 @@ function RankTable({
   positive?: boolean;
 }) {
   return (
-    <div className="panel p-5">
+    <div className="panel p-3 sm:p-5 overflow-x-auto scroll-thin">
       <h3 className="font-semibold">{title}</h3>
       <p className="mt-1 text-xs text-[var(--muted)]">{subtitle}</p>
-      <table className="mt-3 w-full text-sm">
+      <table className="mt-3 w-full min-w-[320px] text-sm">
         <thead>
           <tr className="text-left text-xs uppercase tracking-wider text-[var(--muted)]">
             <th className="py-2 pr-2">#</th>

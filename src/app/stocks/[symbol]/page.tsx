@@ -48,7 +48,7 @@ export default function StockPage({ params }: { params: Promise<{ symbol: string
   const currency = stock.data?.info.currency ?? "";
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
       <div className="mb-6">
         <StockSearch />
       </div>
@@ -65,13 +65,13 @@ export default function StockPage({ params }: { params: Promise<{ symbol: string
               {stock.data.info.exchange || "—"}
               {stock.data.info.sector ? ` · ${stock.data.info.sector}` : ""}
             </div>
-            <h1 className="mt-1 text-2xl font-semibold tracking-tight">
+            <h1 className="mt-1 text-xl sm:text-2xl font-semibold tracking-tight break-words">
               {stock.data.info.company_name || symbol}{" "}
               <span className="text-[var(--muted)]">({symbol})</span>
             </h1>
           </div>
           <div className="text-right">
-            <div className="text-3xl font-semibold">
+            <div className="text-2xl sm:text-3xl font-semibold">
               {num(stock.data.last_price)}{" "}
               <span className="text-sm text-[var(--muted)]">{currency}</span>
             </div>
@@ -102,11 +102,11 @@ export default function StockPage({ params }: { params: Promise<{ symbol: string
       )}
 
       {/* Price chart */}
-      <div className="panel mt-6 p-5">
-        <div className="mb-3 flex items-center justify-between">
+      <div className="panel mt-6 p-3 sm:p-5">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <h3 className="font-semibold">Price</h3>
-          <span className="text-xs text-[var(--muted)]">
-            candles · blue line = Kalman de-noised trend
+          <span className="text-[11px] sm:text-xs text-[var(--muted)]">
+            candles · blue line = Kalman trend
           </span>
         </div>
         {stock.isLoading ? (
@@ -130,7 +130,7 @@ export default function StockPage({ params }: { params: Promise<{ symbol: string
             <button
               key={d}
               onClick={() => setHorizon(d)}
-              className={`px-4 py-1.5 text-sm transition-colors ${
+              className={`px-3 sm:px-4 py-1.5 text-sm transition-colors ${
                 horizon === d
                   ? "bg-[var(--accent)] text-white"
                   : "bg-[var(--panel-2)] text-[var(--muted)] hover:text-[var(--text)]"
@@ -140,7 +140,7 @@ export default function StockPage({ params }: { params: Promise<{ symbol: string
             </button>
           ))}
         </div>
-        <span className="text-xs text-[var(--muted)]">
+        <span className="hidden sm:inline text-xs text-[var(--muted)]">
           trading days ahead — longer horizons carry more uncertainty
         </span>
       </div>
